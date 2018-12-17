@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    Php : {{ foobar }}<br>
+    <br>
+
+    // https://symfony.com/doc/current/controller.html#session-intro<br>
+    Twig : {{ app.session.get('foo') }}<br>
+    <br>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Form{% endblock %}
+
+{% block body %}
+
+    {# you can read and display just one flash message type... #}
+    {#
+    {% for message in app.flashes('notice') %}
+        <div class="alert alert-success" role="alert">
+        {{ message }}
+        </div>
+    {% endfor %}
+    #}
+
+    {# ...or you can read and display every flash message available #}
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }}" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+{% endblock %}

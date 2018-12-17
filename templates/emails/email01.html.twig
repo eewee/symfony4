@@ -1,0 +1,14 @@
+<h3>You did it! You registered!</h3>
+
+Hi {{ name }}! You're successfully registered.<br>
+<br>
+
+{# example, assuming you have a route named "product_list" #}
+To login, go to: <a href="{{ url('test_index') }}">test</a>.<br>
+<br>
+Thanks!<br>
+<br>
+
+{# Makes an absolute URL to the /images/lorempixel_01.jpg file #}
+<img src="{{ absolute_url(asset('img/lorempixel_01.jpg')) }}"><br>
+<br>

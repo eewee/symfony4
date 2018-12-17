@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Form 02{% endblock %}
+
+{% block body %}
+
+    {# Global Variables #}
+    {#
+    <b>Request : </b>
+    {{ app.request }}
+    <hr>
+
+    <b>Session : </b>
+    {{ app.session }}
+    <hr>
+
+    <b>Environment : </b>
+    {{ app.environment }}
+    <hr>
+
+    <b>Debug : </b>
+    {{ app.debug }}
+    <hr>
+
+    <b>Token : </b>
+    {{ app.token }}
+    <hr>
+
+    <b>Flashes : </b>
+    {{ app.flashes }}
+    #}
+
+    {# {{ dump() }} #}
+    {{ dump() }}
+
+    <h2>Form :</h2>
+    {# {{ form_errors(form) }} #}
+
+    {# Disable : HTML5 validator (required) #}
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    {# {{ form_start(form) }} #}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Test : message flash.</h1>
+
+    {# you can read and display just one flash message type... #}
+    {% for message in app.flashes('notice') %}
+        <div class="flash-notice">
+            aaa : {{ message }}
+        </div>
+    {% endfor %}
+
+    {# ...or you can read and display every flash message available #}
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="flash-{{ label }}">
+                bbb : {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+{% endblock %}

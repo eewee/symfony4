@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Form 01{% endblock %}
+
+{% block body %}
+
+    {{ dump() }}
+
+    {{ form_start(form, {'attr': {'class': 'titi'}}) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+
+{% endblock %}

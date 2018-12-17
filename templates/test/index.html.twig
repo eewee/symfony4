@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Test{% endblock %}
+
+{% block body %}
+    {{ dump() }}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+                <ul>
+                    <li><a href="/test/aaa/John/DOE">Get</a></li>
+                    <li><a href="/test/bbb">Session</a></li>
+                    <li><a href="/test/ccc">Flash</a></li>
+                    <li><a href="/test/ddd/toto">All (get, post, session, cookie, server, header, ...)</a></li>
+                    <li><a href="/test/eee">Json</a></li>
+                    <li><a href="/test/fff">Download Pdf</a></li>
+                    <li><a href="/test/ggg">Display Pdf</a></li>
+                    <li><a href="/test/hhh">Log</a></li>
+                    <li><a href="/test/encoderCSV">encoderCSV</a></li>
+                    <li><a href="/test/email">Email</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>{% block title %}Welcome!{% endblock %}</title>
+
+        {# BOOTSTRAP #}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+        {# GENERAL CSS #}
+        <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md">
+
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                        <a class="navbar-brand" href="#">SF4</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul class="navbar-nav">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Form
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item" href="{{ path("form_01") }}">01</a>
+                                        <a class="dropdown-item" href="{{ path("form_02") }}">02</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ path("blacklist_check") }}">BL</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ path("blacklist_check_run", {'ip' : '209.85.210.179'}) }}">BL run</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Test
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item" href="/test/aaa/John/DOE">Get</a>
+                                        <a class="dropdown-item" href="/test/bbb">Session</a>
+                                        <a class="dropdown-item" href="/test/ccc">Flash</a>
+                                        <a class="dropdown-item" href="/test/ddd/toto">All (get, post, session, cookie, server, header, ...)</a>
+                                        <a class="dropdown-item" href="/test/eee">Json</a>
+                                        <a class="dropdown-item" href="/test/fff">Download Pdf</a>
+                                        <a class="dropdown-item" href="/test/ggg">Display Pdf</a>
+                                        <a class="dropdown-item" href="/test/hhh">Log</a>
+                                        <a class="dropdown-item" href="{{ path("test_encodercsv") }}">encoderCSV</a>
+                                        <a class="dropdown-item" href="{{ path("test_encoderxml") }}">encoderXML</a>
+                                        <a class="dropdown-item" href="/test/email">Email</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    One of three columns
+                </div>
+                <div class="col-sm">
+                    One of three columns
+                </div>
+                <div class="col-sm">
+                    One of three columns
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            {% block body %}{% endblock %}
+            <hr>
+            <footer>Footer</footer>
+
+            {% block javascripts %}
+                {# BOOTSTRAP #}
+                {#<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>#}
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+                {# GENERAL JS #}
+                <script src="{{ asset('build/app.js') }}"></script>
+            {% endblock %}
+        </div>
+
+    </body>
+</html>
