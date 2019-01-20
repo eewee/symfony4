@@ -90,56 +90,59 @@ composer require symfony/validator
 
 
 ## DOCTRINE :
-__// Voir la req qui sera utilisée lors de la création du schéma de la db__
+__Voir la req qui sera utilisée lors de la création du schéma de la db__
 
 ```php bin/console doctrine:schema:create --dump-sql```
 
-__// Créer le schéma de la db :__
+__Créer le schéma de la db :__
 
 ```php bin/console doctrine:schema:create```
 
-__// Maj le schéma de la db :__
+__Maj le schéma de la db :__
+
 ```php bin/console doctrine:schema:update```
 
-__// Autre :__
+__Autre :__
 
 ```php bin/console doctrine:migrations:status --show-versions```
 
 ```php bin/console doctrine:migrations:version YYYYMMDDHHMMSS --delete```
 
 
-__// ADD :__
+__ADD :__
 
 ```php bin/console doctrine:migrations:execute YYYYMMDDHHMMSS --up```
 
 
-__// DROP :__
+__DROP :__
 
 ```php bin/console doctrine:migrations:execute YYYYMMDDHHMMSS --down```
 
 
-__// CREATE MIGRATION :__
+__CREATE MIGRATION :__
 
 ```php bin/console make:migration```
 
 
-__// EXEC MIGRATIONS :__
+__EXEC MIGRATIONS :__
 
 ```php bin/console doctrine:migrations:migrate```
 
 
-__// Si on ajoute manuellement une valeur dans entity :__
+__Si on ajoute manuellement une valeur dans entity :__
 
 ```php bin/console make:entity --regenerate```
 
 
-__// Status :__
+__Status :__
 
 ```php bin/console doctrine:migrations:status```
 
-__// Faire une requête :__
+__Faire une requête :__
 
 ```php bin/console doctrine:query:sql "SELECT * FROM user"```
+
+```
 Result : 
 array(1) {
   [0]=>
@@ -152,9 +155,11 @@ array(1) {
     string(60) "$2y$12$7kID8aQ/DOsY1Ue28SJV0OJwHXolrIsNce.Dhf/7dEt16gRH17ep6"
   }
 }
+```
 
 ```php bin/console doctrine:query:dql "SELECT u FROM App\Entity\User u"```
-Result : 
+
+```Result : 
 array(1) {
   [0]=>
   object(stdClass)#597 (5) {
@@ -170,6 +175,7 @@ array(1) {
     array(0) {
     }
   }
+```
 
 __Comprendre le OneToOne, OneToMany, ManyToOne et ManyToMany + Repository :__
 
@@ -180,7 +186,7 @@ L'annotation ManyToOne a un attribut inversedBy.
 L'annotation OneToMany a un attribut mappedBy.
 
 ## FRONT
-Installer “Encore” pour la gestion des scss, css et js.
+Installer "Encore" pour la gestion des scss, css et js.
 
 Lancer la commande “yarn encore dev --watch” durant le dev pour la compilation du scss.
 
