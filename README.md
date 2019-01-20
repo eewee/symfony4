@@ -36,33 +36,33 @@ bin/console server:dump --format=html > \var\dump.html
 https://wiki.php.net/rfc
 
 ## Setup
-Projet web :
+__Projet web :__
 
-composer create-project symfony/website-skeleton my-project
-
-
-Serveur web (option) :
-
-composer require symfony/web-server-bundle --dev
+```composer create-project symfony/website-skeleton my-project```
 
 
-Run serveur local sur http://127.0.0.1:8000/ :
+__Serveur web (option) :__
 
-php bin/console server:run
+```composer require symfony/web-server-bundle --dev```
 
 
-Checking for Security Vulnerabilities :
+__Run serveur local sur http://127.0.0.1:8000/ :__
 
-composer require sensiolabs/security-checker --dev
+```php bin/console server:run```
+
+
+__Checking for Security Vulnerabilities :__
+
+```composer require sensiolabs/security-checker --dev
 
 Apache - htaccess - Rewrite Rules ([source](https://symfony.com/doc/current/setup/web_server_configuration.html)) :
 
-composer require symfony/apache-pack
+composer require symfony/apache-pack```
 
 
-Annotation :
+__Annotation :__
 
-composer require annotations
+```composer require annotations```
 
 
 Check route :
