@@ -11,7 +11,9 @@ PHP Annotations : https://plugins.jetbrains.com/plugin/7320-php-annotations
 PHP Toolbox : https://plugins.jetbrains.com/plugin/8133-php-toolbox 
 
 ## Video :
-https://www.youtube.com/watch?v=2iUJvxkJydM 
+Grafikart : [YouTube](https://www.youtube.com/playlist?list=PLjwdMgw5TTLX7wmorGgfrqI9TcA8nMb29) 
+
+Les teachers du net : [YouTube](https://www.youtube.com/watch?v=2iUJvxkJydM)
 
 https://symfonycasts.com/screencast/symfony 
 
@@ -20,20 +22,17 @@ https://symfonycasts.com/screencast/symfony/setup
 ## Note :
 https://github.com/eewee/Symfony4
 
-Doc API :
-
+## Doc API :
 https://api.symfony.com/4.1/Symfony/Component/Routing/Generator/UrlGenerator.html 
 
 https://api.symfony.com/4.1/Symfony/Component/Serializer/Encoder/CsvEncoder.html 
 
 ## Vrac :
-https://symfony.sh/ 
+Liste bundle : [flex.symfony.com](https://flex.symfony.com/) (=https://symfony.sh/)
 
-addSubscriber est préférable à utiliser sur addListener.
+Demo/source Symfony 4 : [demo](https://github.com/symfony/demo)
 
-bin/console server:dump --format=html > \var\dump.html
-
-https://wiki.php.net/rfc
+[Subscriber](https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/events.html#lifecycle-events) : permet d'écouter les events de l'ORM preUpdate, postUpdate, preRemove, postRemove, ...
 
 ## Setup
 __Projet web :__
@@ -91,7 +90,18 @@ composer require symfony/validator
 
 
 ## DOCTRINE :
-https://symfony.com/doc/current/doctrine.html
+__// Voir la req qui sera utilisée lors de la création du schéma de la db__
+
+```php bin/console doctrine:schema:create --dump-sql```
+
+__// Créer le schéma de la db :__
+
+```php bin/console doctrine:schema:create```
+
+__// Maj le schéma de la db :__
+```php bin/console doctrine:schema:update```
+
+__// Autre :__
 
 ```php bin/console doctrine:migrations:status --show-versions```
 
@@ -127,6 +137,47 @@ __// Status :__
 
 ```php bin/console doctrine:migrations:status```
 
+__// Faire une requête :__
+
+```php bin/console doctrine:query:sql "SELECT * FROM user"```
+Result : 
+array(1) {
+  [0]=>
+  array(3) {
+    ["id"]=>
+    string(1) "1"
+    ["username"]=>
+    string(6) "Thomas"
+    ["password"]=>
+    string(60) "$2y$12$7kID8aQ/DOsY1Ue28SJV0OJwHXolrIsNce.Dhf/7dEt16gRH17ep6"
+  }
+}
+
+```php bin/console doctrine:query:dql "SELECT u FROM App\Entity\User u"```
+Result : 
+array(1) {
+  [0]=>
+  object(stdClass)#597 (5) {
+    ["__CLASS__"]=>
+    string(15) "App\Entity\User"
+    ["id:App\Entity\User:private"]=>
+    int(1)
+    ["username:App\Entity\User:private"]=>
+    string(6) "Thomas"
+    ["password:App\Entity\User:private"]=>
+    string(60) "$2y$12$7kID8aQ/DOsY1Ue28SJV0OJwHXolrIsNce.Dhf/7dEt16gRH17ep6"
+    ["text:App\Entity\User:private"]=>
+    array(0) {
+    }
+  }
+
+__Comprendre le OneToOne, OneToMany, ManyToOne et ManyToMany + Repository :__
+
+[OpenClassRoom](https://openclassrooms.com/fr/courses/5489656-construisez-un-site-web-a-l-aide-du-framework-symfony-4/5517031-gerez-vos-donnees-avec-doctrine-orm)
+
+L'annotation ManyToOne a un attribut inversedBy.
+
+L'annotation OneToMany a un attribut mappedBy.
 
 ## FRONT
 Installer “Encore” pour la gestion des scss, css et js.
