@@ -77,7 +77,7 @@ __SwiftMailer ([source](https://symfony.com/doc/current/email.html)) :__
 ```composer require symfony/swiftmailer-bundle```
 
 
-Form ([source](https://symfony.com/doc/current/components/form.html) / [type](https://symfony.com/doc/current/reference/forms/types/text.html)) :
+__Form ([source](https://symfony.com/doc/current/components/form.html) / [type](https://symfony.com/doc/current/reference/forms/types/text.html)) :__
 
 https://symfony.com/doc/current/forms.html 
 
@@ -95,39 +95,39 @@ composer require symfony/validator
 ## DOCTRINE :
 https://symfony.com/doc/current/doctrine.html
 
-php bin/console doctrine:migrations:status --show-versions
+```php bin/console doctrine:migrations:status --show-versions```
 
-php bin/console doctrine:migrations:version YYYYMMDDHHMMSS --delete
-
-
-// ADD : 
-
-php bin/console doctrine:migrations:execute YYYYMMDDHHMMSS --up
+```php bin/console doctrine:migrations:version YYYYMMDDHHMMSS --delete```
 
 
-// DROP : 
+__// ADD : __
 
-php bin/console doctrine:migrations:execute YYYYMMDDHHMMSS --down
-
-
-// CREATE MIGRATION :
-
-php bin/console make:migration
+```php bin/console doctrine:migrations:execute YYYYMMDDHHMMSS --up```
 
 
-// EXEC MIGRATIONS :
+__// DROP : __
 
-php bin/console doctrine:migrations:migrate
-
-
-// Si on ajoute manuellement une valeur dans entity :
-
-php bin/console make:entity --regenerate
+```php bin/console doctrine:migrations:execute YYYYMMDDHHMMSS --down```
 
 
-// Status :
+__// CREATE MIGRATION :__
 
-php bin/console doctrine:migrations:status
+```php bin/console make:migration```
+
+
+__// EXEC MIGRATIONS :__
+
+```php bin/console doctrine:migrations:migrate```
+
+
+__// Si on ajoute manuellement une valeur dans entity :__
+
+```php bin/console make:entity --regenerate```
+
+
+__// Status :__
+
+```php bin/console doctrine:migrations:status```
 
 
 ## FRONT
@@ -136,40 +136,40 @@ Installer “Encore” pour la gestion des scss, css et js.
 Lancer la commande “yarn encore dev --watch” durant le dev pour la compilation du scss.
 
 
-Encore (assets > scss, css, js, …) : 
+__Encore (assets > scss, css, js, …) : __
 
 https://symfony.com/doc/4.0/frontend/encore/installation.html 
 
 https://symfony.com/doc/current/frontend/encore/simple-example.html 
 
 
-Compile assets once :  yarn encore dev
+__Compile assets once :  yarn encore dev__
 
 Or, recompile assets automatically when files change : yarn encore dev --watch 
 
 On deploy, create a production build : yarn encore production
 
 
-Bootstrap CSS/JS :
+__Bootstrap CSS/JS :__
 
 https://symfony.com/doc/current/frontend/encore/bootstrap.html 
 
 https://symfony.com/doc/current/form/bootstrap4.html
 
 
-Generate url (absolute / relative) :
+__Generate url (absolute / relative) :__
 
 https://symfony.com/doc/current/routing.html#routing-requirements (generateUrl)
 
 https://symfony.com/doc/current/controller.html (redirectToRoute / redirect)
 
 
-Template erreur 404, 500, etc … :
+__Template erreur 404, 500, etc … :__
 
 https://symfony.com/doc/current/controller/error_pages.html 
 
 
-Log : 
+__Log : __
 
 https://symfony.com/doc/current/logging.html 
 
@@ -180,7 +180,7 @@ https://github.com/Seldaek/monolog/blob/master/doc/02-handlers-formatters-proces
 https://symfony.com/doc/current/deployment.html 
 
 
-Tuto pour déployer avec Git :
+__Tuto pour déployer avec Git :__
 
 https://fr.tuto.com/compte/achats/video/101881/player/#190751-preparation-du-depot-distant 
 
@@ -190,7 +190,7 @@ https://thatelo.fr/blog/deployer-symfony-git-serveur
 
 
 ### SUR SERVEUR DISTANT :
-1/
+__1/ git init :__
 
 cd /kunden/homepages/xx/dxxxxxxxxx/htdocs/var/git
 
@@ -201,21 +201,21 @@ cd sf4.git
 git init --bare
 
 
-2/ se placer dans le dossier hooks
+__2/ se placer dans le dossier hooks :__
 
 cd  hooks
 
 vi post-receive
 
 
-3/ Edit post-receive ET coller ceci :
+__3/ Edit post-receive ET coller ceci :__
 
 #!/bin/sh
 
 git --work-tree=/kunden/homepages/xx/dxxxxxxxxx/htdocs/sf4_test/ --git-dir=/kunden/homepages/xx/dxxxxxxxxx/htdocs/var/git/sf4_test.git checkout -f
 
 
-4/ 
+__4/ Droit execution :__
 
 chmod +x post-receive
 
@@ -245,22 +245,22 @@ php bin/console assets:install
 
 
 ### DIVERS :
-// install composer
+__// install composer__
 
 curl -sS https://getcomposer.org/installer | /usr/bin/php7.1-cli
 
 
-// update composer 
+__// update composer __
 
 /usr/bin/php7.1-cli composer.phar self-update
 
 
-// Heroku deploy :
+__// Heroku deploy :__
 
 https://afsy.fr/avent/2017/03-deployer-un-projet-symfony-flex-sur-heroku
 
 
-SSH 1and1 :
+__SSH 1and1 :__
 
 Source : 
 https://www.1and1.fr/digitalguide/serveur/securite/generer-des-cles-ssh-pour-votre-connexion-reseau/ 
@@ -270,7 +270,7 @@ http://thisisnotcnn.blogspot.com/2015/07/setup-remote-git-repository-on-1-server
 http://flosy.info/2012/07/utilisation-de-git-avec-un-hebergement-de-1and1/ 
 
 
-1/ Générer key :
+__1/ Générer key :__
 
 cd .ssh
 
@@ -281,28 +281,28 @@ ssh-keygen -t rsa -C “contact@tld.com” -b 4096
 mdp (optionnel)
 
 
-2/ Copier contenu 1and1_rsa.pub (local) dans ~/.ssh/authorized_keys (distant à la racine).
+__2/ Copier contenu 1and1_rsa.pub (local) dans ~/.ssh/authorized_keys (distant à la racine).__
 
 on peut le faire en uploadant 1and1_rsa.pub sur le serveur.
 
 cat id_rsa.pub >> ~\.ssh\authorized_keys
 
 
-3/ En local :
+__3/ En local :__
 
 cd ~/.ssh
 
 ssh-add 1and1_rsa
 
 
-4/ En distant :
+__4/ En distant :__
 
 On copie la key public dans .ssh/authorized_keys (à la racine du FTP 1and1) :
 
 cat ~/id_rsa_1and1.pub >> ~/.ssh/authorized_keys
 
 
-5/ test en indiquant : 
+__5/ test en indiquant : __
 
 ssh uxxxxxxxx@homexxxxxxxxx.1and1-data.host ls
 
