@@ -100,12 +100,12 @@ https://symfony.com/doc/current/doctrine.html
 ```php bin/console doctrine:migrations:version YYYYMMDDHHMMSS --delete```
 
 
-__// ADD : __
+__// ADD :__
 
 ```php bin/console doctrine:migrations:execute YYYYMMDDHHMMSS --up```
 
 
-__// DROP : __
+__// DROP :__
 
 ```php bin/console doctrine:migrations:execute YYYYMMDDHHMMSS --down```
 
@@ -136,7 +136,7 @@ Installer “Encore” pour la gestion des scss, css et js.
 Lancer la commande “yarn encore dev --watch” durant le dev pour la compilation du scss.
 
 
-__Encore (assets > scss, css, js, …) : __
+__Encore (assets > scss, css, js, …) :__
 
 https://symfony.com/doc/4.0/frontend/encore/installation.html 
 
@@ -169,7 +169,7 @@ __Template erreur 404, 500, etc … :__
 https://symfony.com/doc/current/controller/error_pages.html 
 
 
-__Log : __
+__Log :__
 
 https://symfony.com/doc/current/logging.html 
 
@@ -250,7 +250,7 @@ __// install composer__
 curl -sS https://getcomposer.org/installer | /usr/bin/php7.1-cli
 
 
-__// update composer __
+__// update composer__
 
 /usr/bin/php7.1-cli composer.phar self-update
 
@@ -302,7 +302,7 @@ On copie la key public dans .ssh/authorized_keys (à la racine du FTP 1and1) :
 cat ~/id_rsa_1and1.pub >> ~/.ssh/authorized_keys
 
 
-__5/ test en indiquant : __
+__5/ test en indiquant :__
 
 ssh uxxxxxxxx@homexxxxxxxxx.1and1-data.host ls
 
