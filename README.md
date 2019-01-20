@@ -53,11 +53,13 @@ __Run serveur local sur http://127.0.0.1:8000/ :__
 
 __Checking for Security Vulnerabilities :__
 
-```composer require sensiolabs/security-checker --dev
+```
+composer require sensiolabs/security-checker --dev
 
 Apache - htaccess - Rewrite Rules ([source](https://symfony.com/doc/current/setup/web_server_configuration.html)) :
 
-composer require symfony/apache-pack```
+composer require symfony/apache-pack
+```
 
 
 __Annotation :__
@@ -65,20 +67,21 @@ __Annotation :__
 ```composer require annotations```
 
 
-Check route :
+__Check route :__
 
-php bin/console debug:router
+```php bin/console debug:router```
 
 
-SwiftMailer ([source](https://symfony.com/doc/current/email.html)) :
+__SwiftMailer ([source](https://symfony.com/doc/current/email.html)) :__
 
-composer require symfony/swiftmailer-bundle
+```composer require symfony/swiftmailer-bundle```
 
 
 Form ([source](https://symfony.com/doc/current/components/form.html) / [type](https://symfony.com/doc/current/reference/forms/types/text.html)) :
 
 https://symfony.com/doc/current/forms.html 
 
+```
 composer require symfony/form
 
 composer require symfony/validator
@@ -86,6 +89,7 @@ composer require symfony/validator
 // Disable : HTML5 validator (required) :
 
 {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+```
 
 
 ## DOCTRINE :
