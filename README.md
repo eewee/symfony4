@@ -53,13 +53,11 @@ __Run serveur local sur http://127.0.0.1:8000/ :__
 
 __Checking for Security Vulnerabilities :__
 
-```
-composer require sensiolabs/security-checker --dev
+```composer require sensiolabs/security-checker --dev```
 
-Apache - htaccess - Rewrite Rules ([source](https://symfony.com/doc/current/setup/web_server_configuration.html)) :
+__Apache - htaccess - Rewrite Rules ([source](https://symfony.com/doc/current/setup/web_server_configuration.html)) :__
 
-composer require symfony/apache-pack
-```
+```composer require symfony/apache-pack```
 
 
 __Annotation :__
